@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/marta/AndroidStudioProjects/Songbook/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/marta/AndroidStudioProjects/Songbook/app/src/main/res/layout/fragment_chords.xml" value="0.358695652173913" />
         <entry key="..\:/Users/marta/AndroidStudioProjects/Songbook/app/src/main/res/layout/fragment_dashboard.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/marta/AndroidStudioProjects/Songbook/app/src/main/res/layout/fragment_home.xml" value="0.358695652173913" />
         <entry key="..\:/Users/marta/AndroidStudioProjects/Songbook/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3625" />
       </map>
     </option>

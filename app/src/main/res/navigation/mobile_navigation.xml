@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_songs">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.martapolcyn.songbook.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/navigation_songs"
+        android:name="com.martapolcyn.songbook.ui.songs.SongsFragment"
+        android:label="@string/title_songs"
+        tools:layout="@layout/fragment_songs" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.martapolcyn.songbook.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_favorites"
+        android:name="com.martapolcyn.songbook.ui.favorites.FavoritesFragment"
+        android:label="@string/title_favorites"
+        tools:layout="@layout/fragment_favorites" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.martapolcyn.songbook.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_chords"
+        android:name="com.martapolcyn.songbook.ui.chords.ChordsFragment"
+        android:label="@string/title_chords"
+        tools:layout="@layout/fragment_chords" />
 </navigation>

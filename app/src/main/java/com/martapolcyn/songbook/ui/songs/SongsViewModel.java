@@ -1,16 +1,16 @@
-package com.martapolcyn.songbook.ui.dashboard;
+package com.martapolcyn.songbook.ui.songs;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class DashboardViewModel extends ViewModel {
+public class SongsViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public DashboardViewModel() {
+    public SongsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
+        mText.setValue("This is songs fragment");
     }
 
     public LiveData<String> getText() {

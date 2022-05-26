@@ -1,4 +1,4 @@
-package com.martapolcyn.songbook.ui.dashboard;
+package com.martapolcyn.songbook.ui.chords;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,22 +10,22 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.martapolcyn.songbook.databinding.FragmentDashboardBinding;
+import com.martapolcyn.songbook.databinding.FragmentChordsBinding;
 
-public class DashboardFragment extends Fragment {
+public class ChordsFragment extends Fragment {
 
-    private FragmentDashboardBinding binding;
+    private FragmentChordsBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        DashboardViewModel dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
+        ChordsViewModel chordsViewModel =
+                new ViewModelProvider(this).get(ChordsViewModel.class);
 
-        binding = FragmentDashboardBinding.inflate(inflater, container, false);
+        binding = FragmentChordsBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textDashboard;
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textChords;
+        chordsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

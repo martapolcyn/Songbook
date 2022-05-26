@@ -1,16 +1,16 @@
-package com.martapolcyn.songbook.ui.home;
+package com.martapolcyn.songbook.ui.chords;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class ChordsViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public ChordsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mText.setValue("This is chords fragment");
     }
 
     public LiveData<String> getText() {
