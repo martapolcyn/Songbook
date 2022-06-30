@@ -3,4 +3,9 @@
     <string name="title_songs">Songs</string>
     <string name="title_favorites">Favorites</string>
     <string name="title_chords">Chords</string>
+
+    <string name="action_search">Search</string>
+    <string name="action_report">Report mistakes</string>
+    <string name="action_rate">Rate the app</string>
+    <string name="title_activity_main2">Main2Activity</string>
 </resources>
