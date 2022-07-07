@@ -1,5 +1,7 @@
 package com.martapolcyn.songbook.ui.songs;
 
+import android.util.Log;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -26,7 +28,6 @@ public class SongsViewModel extends ViewModel {
     private void loadData() {
 
         List<Song> songs = new ArrayList<>();
-
 
 
         songs.add(new Song("Piosenka Polityczna", "Elektryczne Gitary",
@@ -63,5 +64,9 @@ public class SongsViewModel extends ViewModel {
         Collections.sort(songs);
 
         mData.setValue(songs);
+    }
+
+    public void makeFavorite(Song song) {
+        Log.d("SongsViewModel", "makeFavorite() called with: song = [" + song + "]");
     }
 }
