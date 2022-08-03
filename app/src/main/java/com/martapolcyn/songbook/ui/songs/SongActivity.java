@@ -16,17 +16,19 @@ public class SongActivity extends AppCompatActivity {
         setContentView(R.layout.activity_song);
 
         // Get the Intent that started this activity and extract the string
-        Intent intent = getIntent();
+        Intent intent = this.getIntent();
+        Bundle bundle = intent.getExtras();
+        Song song = (Song) bundle.getSerializable("songkey");
 
-//        // Capture the layout's TextViews and set the artist, title etc.
-//        TextView tvArtist = findViewById(R.id.tv_artist);
-//        tvArtist.setText(song.getArtist());
-//        TextView tvTitle = findViewById(R.id.tv_title);
-//        tvTitle.setText(song.getTitle());
-//        TextView tvLyrics = findViewById(R.id.tv_lyrics);
-//        tvLyrics.setText(song.getLyrics());
-//        TextView tvChords = findViewById(R.id.tv_chords);
-//        tvChords.setText(song.getChords());
+        // Capture the layout's TextViews and set the artist, title etc.
+        TextView tvArtist = findViewById(R.id.tv_artist);
+        tvArtist.setText(song.getArtist());
+        TextView tvTitle = findViewById(R.id.tv_title);
+        tvTitle.setText(song.getTitle());
+        TextView tvLyrics = findViewById(R.id.tv_lyrics);
+        tvLyrics.setText(song.getLyrics());
+        TextView tvChords = findViewById(R.id.tv_chords);
+        tvChords.setText(song.getChords());
     }
 
     @Override

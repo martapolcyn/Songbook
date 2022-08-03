@@ -1,13 +1,10 @@
 package com.martapolcyn.songbook;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -15,8 +12,6 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.martapolcyn.songbook.databinding.ActivityMainBinding;
-import com.martapolcyn.songbook.ui.songs.Song;
-import com.martapolcyn.songbook.ui.songs.SongsFragment;
 
 public class MainActivity extends AppCompatActivity {
 

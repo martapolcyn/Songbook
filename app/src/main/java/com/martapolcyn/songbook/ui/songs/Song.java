@@ -1,7 +1,5 @@
 package com.martapolcyn.songbook.ui.songs;
 
-import androidx.recyclerview.widget.RecyclerView;
-
 import java.io.Serializable;
 
 public class Song implements Serializable, Comparable<Song> {

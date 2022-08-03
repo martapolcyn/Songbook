@@ -1,6 +1,8 @@
 package com.martapolcyn.songbook.ui.songs;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,7 +49,12 @@ public class SongsFragment extends Fragment implements OnSongClickedListener {
 
     @Override
     public void onClick(Song song) {
-        viewModel.makeFavorite(song);
+        Log.d("SongsFragment", "onClick() called with: song = [" + song + "]");
+        Intent intent = new Intent(getActivity(), SongActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("songkey", song);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 
     private void setupRecycler() {
