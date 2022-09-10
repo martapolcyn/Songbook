@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,6 +23,7 @@ import com.martapolcyn.songbook.MainActivity;
 import com.martapolcyn.songbook.R;
 import com.martapolcyn.songbook.databinding.ListFragmentBinding;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SongsFragment extends Fragment implements OnSongClickedListener {
@@ -55,8 +57,9 @@ public class SongsFragment extends Fragment implements OnSongClickedListener {
             }
 
             @Override
-            public boolean onQueryTextChange(String newText) {
-                adapter.getFilter().filter(newText);
+            public boolean onQueryTextChange(String text) {
+                viewModel.onQueryTextChange(text);
+                adapter.notifyDataSetChanged();
                 return false;
             }
         });

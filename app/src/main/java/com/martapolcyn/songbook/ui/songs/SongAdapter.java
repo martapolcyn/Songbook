@@ -14,54 +14,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class SongAdapter extends RecyclerView.Adapter<SongAdapter.MyViewHolder> implements Filterable {
+public class SongAdapter extends RecyclerView.Adapter<SongAdapter.MyViewHolder> {
 
     private final MyViewHolderOnClickListener myViewHolderOnClickListener;
     private final OnSongClickedListener listener;
     private List<Song> songs = new ArrayList<>();
-    private List<Song> allSongs;
 
     public SongAdapter(OnSongClickedListener listener) {
         this.listener = listener;
         myViewHolderOnClickListener = position -> listener.onClick(songs.get(position));
-        allSongs = new ArrayList<>(songs);
     }
 
-    @Override
-    public Filter getFilter() {
-        return songFilter;
+    public void filterSongs(ArrayList<Song> filteredSongs) {
+        songs = filteredSongs;
+        notifyDataSetChanged();
     }
-
-    private Filter songFilter = new Filter() {
-        @Override
-        protected FilterResults performFiltering(CharSequence charSequence) {
-            List<Song> filteredSongs = new ArrayList<>();
-
-            if (charSequence == null || charSequence.length() == 0) {
-                filteredSongs.addAll(allSongs);
-            } else {
-                String filterPattern = charSequence.toString().toLowerCase().trim();
-
-                for (Song song : allSongs) {
-                    if (song.getArtist().toLowerCase().contains(filterPattern)
-                            || song.getTitle().toLowerCase().contains(filterPattern)) {
-                        filteredSongs.add(song);
-                    }
-                }
-            }
-
-            FilterResults filterResults = new FilterResults();
-            filterResults.values = filteredSongs;
-            return filterResults;
-        }
-
-        @Override
-        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-            songs.clear();
-            songs.addAll((List) filterResults.values);
-            notifyDataSetChanged();
-        }
-    };
 
     interface MyViewHolderOnClickListener {
         void onClick(int position);

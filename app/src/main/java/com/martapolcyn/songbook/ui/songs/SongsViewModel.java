@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -15,15 +16,12 @@ public class SongsViewModel extends ViewModel {
     private final MutableLiveData<List<Song>> mData = new MutableLiveData<>();
 
     public SongsViewModel() {
-
         loadData();
     }
 
     public LiveData<List<Song>> getData() {
-
         return mData;
     }
-
 
     private void loadData() {
 
@@ -64,6 +62,18 @@ public class SongsViewModel extends ViewModel {
         Collections.sort(songs);
 
         mData.setValue(songs);
+    }
+
+    void onQueryTextChange(String pattern) {
+        List<Song> songs = mData.getValue();
+        List<Song> filteredSongs = new ArrayList<>();
+        for (Song song : songs) {
+            if (song.getArtist().toLowerCase().contains(pattern) ||
+                    song.getTitle().toLowerCase().contains(pattern)) {
+                filteredSongs.add(song);
+            }
+        }
+        mData.setValue(filteredSongs);
     }
 
     public void makeFavorite(Song song) {
